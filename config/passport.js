@@ -11,25 +11,25 @@ passport.use(new LocalStrategy(
   },
   function(email, password, done) {
    
-    db.User.findOne({
+    db.user.findOne({
       where: {
         email: email
       }
-    }).then(function(dbUser) {
+    }).then(function(dbuser) {
       
-      if (!dbUser) {
+      if (!dbuser) {
         return done(null, false, {
           message: "Incorrect email."
         });
       }
       
-      else if (!dbUser.validPassword(password)) {
+      else if (!dbuser.validPassword(password)) {
         return done(null, false, {
           message: "Incorrect password."
         });
       }
       
-      return done(null, dbUser);
+      return done(null, dbuser);
     });
   }
 ));

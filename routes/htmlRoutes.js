@@ -11,18 +11,18 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/index");
     }
-    res.render("signup", null);
+    res.render("login", null);
   });
 
   app.get("/login", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/index");
     }
     res.render("login", null);
   });
 
-  app.get("/members", isAuthenticated, function(req, res) {
+  app.get("/index", isAuthenticated, function(req, res) {
     res.render("index", null);
   });
 
@@ -30,7 +30,7 @@ module.exports = function(app) {
     res.render("hosting", null);
   });
 
-  app.get("/find", isAuthenticated, function(req, res) {
+  app.get("/finder", isAuthenticated, function(req, res) {
     res.render("finder", null);
   });
 };

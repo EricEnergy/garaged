@@ -68,8 +68,8 @@ module.exports = function(app) {
   });
 
   app.post("/api/signup", function(req, res) {
-    console.log(req)
-    db.User.create({
+    console.log(req.body.email)
+    db.user.create({
       email: req.body.email,
       password: req.body.password
     })
