@@ -1,0 +1,39 @@
+{
+  "name": "project2",
+  "version": "1.0.0",
+  "description": "App that lets people find available garages.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EricEnergy/project2.git"
+  },
+  "keywords": [
+    "garage",
+    "rent"
+  ],
+  "author": "Nick Cox Eric Simmons Zac Talley Mario Cortes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EricEnergy/project2/issues"
+  },
+  "homepage": "https://github.com/EricEnergy/project2#readme",
+  "dependencies": {
+    "bcryptjs": "2.4.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.16.1",
+    "jest": "^24.9.0",
+    "mysql2": "^2.0.2",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "sequelize": "^5.21.3"
+  },
+  "devDependencies": {
+    "faker": "^4.1.0"
+  }
+}
