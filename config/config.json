@@ -16,6 +16,7 @@
   "production": {
     "username": "fa98gmnw4u0lx7uq",
     "database": "g0nsj7l37lk3g3wk",
+    "port": 3306,
     "host": "h40lg7qyub2umdvb.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql",
     "operatorsAliases": false
