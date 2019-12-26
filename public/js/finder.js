@@ -1,6 +1,4 @@
 $(function(){
-  // const myId = $('.member-name').data('id');
-  const myId = 4;
 
 
   $(document).ready(function() {
@@ -8,6 +6,7 @@ $(function(){
     // and updates the HTML on the page
     $.get("/api/user_data").then(function(data) {
       $(".member-name").text(data.email);
+      $(".member-name").attr('data-id', data.id);
     });
   });
 
@@ -16,6 +15,7 @@ $(function(){
   $('#submit-unit').on('click', function(e){
     console.log(e)
       e.preventDefault();
+      const myId = $(".member-name").data('data-id', data.id);
       const data = {
           name : $("input[name=name]").val(),
           description: $("input[name=description]").val(),
