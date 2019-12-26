@@ -15,8 +15,19 @@ body {
   justify-content: center;
 }
 
+.carousel-caption{
+  color: yellow;
+  font-weight: bold;
+  font-size: 20px;
+  top: 50px;
+  left: 0;
+  min-width: 100%;
+  min-height: 500px;
+  
+}
+
 .carousel-inner {
-  opacity: 0.5;
+  opacity: 0.75;
   top: 0;
   left: 0;
   min-width: 100%;
