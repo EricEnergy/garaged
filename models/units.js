@@ -36,13 +36,13 @@ module.exports = function(sequelize, DataTypes) {
         // len: [05]
       }
     },
-    owner_id: {
-      type: DataTypes.STRING,
-      validate: {
-        len: [01]
-      },
-      allowNull: false
-    },
+    // owner_id: {
+    //   type: DataTypes.STRING,
+    //   validate: {
+    //     len: [01]
+    //   },
+    //   allowNull: false
+    // },
     capacity: {
       type: DataTypes.INTEGER,
       validate: {
@@ -86,7 +86,7 @@ module.exports = function(sequelize, DataTypes) {
     Unit.belongsTo(models.user, {
       foreignKey: {
         allowNull: false
-      }
+      },
     });
   };
 

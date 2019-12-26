@@ -33,4 +33,8 @@ module.exports = function(app) {
   app.get("/finder", isAuthenticated, function(req, res) {
     res.render("finder", null);
   });
+
+  app.get("/signup", isAuthenticated, function(req, res) {
+    res.render("signup", null);
+  });
 };
