@@ -14,28 +14,51 @@ $(function () {
         });
 
         function init() {
+            // $.get(`../api/units/${myId}`, (data) => {
+            //     data.forEach(item => {
+            //         const li = $(`<li class="list-group-item">${item.name} : ${item.status}  </li>`);
+            //         if (item.status === "requested") {
+            //             const btn = $(`<button class="acceptBtn" data-requester="${item.last_request_id}" data-id="${item.id}">Accept Request</button>`);
+            //             li.append(btn);
+            //         }
+            //         if (item.status === "occupied") {
+            //             const btn = $(`<button class="openBtn" data-id="${item.id}">Make Available</button>`);
+            //             li.append(btn);
+            //         }
+            //         const delBtn = $(`<button class="delBtn" data-id="${item.id}">Delete</button>`);
+            //         li.append(delBtn);
+            //         $("#units").append(li);
+            //     })
+            // });
+            
             $.get(`../api/units/${myId}`, (data) => {
                 data.forEach(item => {
-                    const li = $(`<li class="list-group-item">${item.name} : ${item.status}  </li>`);
+                    var image ="images\\user.jpg";
+                    const li = $(`<div class="card" style="width: 18rem;" id="garageIcons">
+                    <img class="card-img-top" src="${image}" alt="anon user">
+                    <div class="card-body">
+                      <h5 class="card-title">${item.name} : ${item.status}</h5></div></div>`);
                     if (item.status === "requested") {
-                        const btn = $(`<button class="acceptBtn" data-requester="${item.last_request_id}" data-id="${item.id}">Accept Request</button>`);
+                        const btn = $(`<button class="acceptBtn btn btn-primary" data-requester="${item.last_request_id}" data-id="${item.id}">Accept Request</button>`);
                         li.append(btn);
                     }
                     if (item.status === "occupied") {
-                        const btn = $(`<button class="openBtn" data-id="${item.id}">Make Available</button>`);
+                        const btn = $(`<button class="openBtn btn btn-success data-id="${item.id}">Make Available</button>`);
                         li.append(btn);
                     }
-                    const delBtn = $(`<button class="delBtn" data-id="${item.id}">Delete</button>`);
+                    const delBtn = $(`<button class="delBtn btn btn-warning" data-id="${item.id}">Delete Listing</button>`);
                     li.append(delBtn);
                     $("#units").append(li);
                 })
             });
+
+
             // get all units that the user has requested
             $.get(`../api/units/${myId}/requested`, (data) => {
                 console.log(data);
                 data.forEach(item => {
-                    const li = $(`<li class="list-group-item">${item.name}: ${item.address} ${item.city} ${item.state}</li>`);
-                    const cancelBtn = $(`<button class="cancelBtn" data-id="${item.id}">Cancel Request</button>`);
+                    const li = $(`<li class="list-group-item"><h5>${item.name}: ${item.address} ${item.city} ${item.state} </h5></li>`);
+                    const cancelBtn = $(`<button class="cancelBtn btn btn-danger" data-id="${item.id}">Cancel Request</button>`);
                     li.append(cancelBtn);
                     $("#requested").append(li);
                 })
@@ -44,10 +67,10 @@ $(function () {
             $.get(`../api/units/${myId}/occupied`, (data) => {
                 console.log(data);
                 data.forEach(item => {
-                    const li = $(`<li class="list-group-item">${item.name}: ${item.address} ${item.city} ${item.state}</li>`);
+                    const li = $(`<li class="list-group-item"><h5>${item.name}: ${item.address} ${item.city} ${item.state}</h5> </li>`);
                     // const delBtn = $(`<button class="delBtn" data-id="${item.id}">Delete</button>`);
                     // li.append(delBtn);
-                    const btn = $(`<button class="openBtn" data-id="${item.id}">End Lease</button>`);
+                    const btn = $(`<button class="openBtn btn btn-warning" data-id="${item.id}">End Lease</button>`);
                     li.append(btn);
                     $("#occupied").append(li);
                 })

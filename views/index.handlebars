@@ -1,8 +1,12 @@
 <body>
   <nav class="navbar navbar-dark bg-primary d-flex justify-content-end">
     <a class="navbar-brand flex-grow-1" href="/index">
-      <img src="images\16-512.png" width="40" height="40" alt="">
+      <img src="images\16-512.png" width="40" height="40" alt="topIcon" id="iconer">
     </a>
+    <a class="navbar-brand form-inline " href="/hosting">
+      Host </a>
+    <a class="navbar-brand form-inline " href="/finder">
+      Find </a>
     <a class="navbar-brand form-inline " href="/contact">
       Contact Us
     </a>
@@ -10,34 +14,8 @@
       Logout
     </a>
   </nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-4 m-4">
-        <div class="card shadow p-3 mb-5 text-center" style="width: 18rem; height: 8rem;">
-          <a href="/finder">
-            <h1>Find</h1>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-4 m-4">
-        <div class="card shadow p-3 mb-5 text-center" style="width: 18rem; height: 8rem;">
-          <a href="/hosting">
-            <h1>Host</h1>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-2 "></div>
-    </div>
-  </div>
 
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-      </div>
-    </div>
-  </div>
+
 
 
   <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
@@ -50,7 +28,7 @@
       <div class="carousel-item active">
         <div class="carousel-caption d-md-block">
           <p class="lead text-center font-weight-bold" id="h1Size">Winter coming?</p>
-          <p class="lead text-center font-weight-bold" id="pSize">Choose from any garages in you area to store your
+          <p class="lead text-center font-weight-bold" id="pSize">Choose from any garages in your area to store your
             vehicle!</p>
         </div>
         <img src="images\middle.jpg" class="d-block w-100" alt="garage">
@@ -58,14 +36,15 @@
       <div class="carousel-item">
         <div class="carousel-caption d-md-block">
           <p class="text-center font-weight-bold" id="h1Size">Have space?</p>
-          <p class="lead text-center font-weight-bold" id="pSize">Time to make some extra cash, host today!</p>
+          <p class="lead text-center font-weight-bold" id="pSize">Want to make some extra cash? Host today!</p>
         </div>
         <img src="images\middle.jpg" class="d-block w-100" alt="garage">
       </div>
       <div class="carousel-item">
         <div class="carousel-caption d-md-block">
           <p class="text-center font-weight-bold" id="h1Size">Need some tools?</p>
-          <p class="lead text-center font-weight-bold" id="pSize">Select from our users who have garages with availible tools to maintain your car!</p>
+          <p class="lead text-center font-weight-bold" id="pSize">Choose from local hosts in your area who have garages
+            with available tools!</p>
         </div>
         <img src="images\middle.jpg" class="d-block w-100" alt="garage">
       </div>
@@ -80,30 +59,37 @@
     </a>
   </div>
 
-  <!--   
-  <div class="row">
-    <div class="col-md-2.8 m-2">
-      <div class="carder shadow p-3 mb-5 text-center" style="width: 18rem; height: 8rem;">
-        <h1>Find</h1>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-3 m-4">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="images\\tool.png" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 m-4">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="images\\search.png" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 m-4">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="images\\store.png" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col-md-2.8 m-2">
-      <div class="carder shadow p-3 mb-5 text-center" style="width: 18rem; height: 8rem;">
-        <h1>Find</h1>
-      </div>
-    </div>
-    <div class="col-md-2.8 m-2">
-      <div class="carder shadow p-3 mb-5 text-center" style="width: 18rem; height: 8rem;">
-        <h1>Find</h1>
-      </div>
-    </div>
-    <div class="col-md-2.8 m-2">
-      <div class="carder shadow p-3 mb-5 text-center" style="width: 18rem; height: 8rem;">
-        <h1>Find</h1>
-      </div>
-    </div>
-  </div> -->
-
+  </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>

@@ -16,7 +16,7 @@ body {
 }
 
 .carousel-caption{
-  color: yellow;
+  color: rgb(245, 245, 122);
   font-weight: bold;
   top: 50px;
   left: 0;
@@ -34,15 +34,25 @@ body {
   /* min-height: 500px; */
   
 }
-.card {
+#garageIcons{
+  display:inline-block;
+  margin-right: 10px;
+  background-color: #dbdbdb;
+}
+
+#iconer{
+  filter: brightness(0) invert(1);
+}
+
+#optionsFH {
   margin:auto; 
   float: none; 
   margin-bottom: 10px; 
   border-radius: 2rem;
   background-color: #dadada;
   justify-content: center;
-
 }
+
 .carder {
   float: none; 
   border-radius: 2rem;
@@ -50,15 +60,19 @@ body {
   justify-content: center;
 }
 
+
 #jumboTwo{
   margin: 20px;
 }
 
 #h1Size{
-  font-size: 8vw;
+  font-size: 6vw;
+  text-shadow: 5px 5px rgb(26, 26, 26);
+
 }
 #pSize{
   font-size: 2.5vw;
+  text-shadow: 2px 2px rgb(0, 0, 0);
 }
 
 @media screen and (max-width: 768px){
