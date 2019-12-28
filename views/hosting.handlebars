@@ -12,13 +12,15 @@
   </nav>
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <div class="container">
         <div class="text-center">
-          <h1 class="display-4 lead text-center">Welcome <span class="member-name"></span></h1>
+          {{#with userdata}}
+          <ol> 
+          <h1 class="display-4 lead text-center">Welcome <span class="member-name" data-id="{{this.id}}">{{this.email}}</span></h1>
           <p class="display-6 lead text-center">Here you can check on the status of your current listings and create new
             listings.</p>
+            </ol>
+          {{/with}}
         </div>
-      </div>
     </div>
   </div>
   <div class="jumbotron" id="jumboTwo">

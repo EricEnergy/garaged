@@ -18,7 +18,6 @@ body {
 .carousel-caption{
   color: yellow;
   font-weight: bold;
-  font-size: 20px;
   top: 50px;
   left: 0;
   min-width: 100%;
@@ -27,15 +26,16 @@ body {
 }
 
 .carousel-inner {
+  font-size: 50px;
   opacity: 0.75;
   top: 0;
   left: 0;
   min-width: 100%;
-  min-height: 500px;
+  /* min-height: 500px; */
   
 }
 .card {
-  margin: 0 auto; 
+  margin:auto; 
   float: none; 
   margin-bottom: 10px; 
   border-radius: 2rem;
@@ -54,9 +54,26 @@ body {
   margin: 20px;
 }
 
+#h1Size{
+  font-size: 8vw;
+}
+#pSize{
+  font-size: 2.5vw;
+}
+
 @media screen and (max-width: 768px){
   .modal-content {
     width: 85%; 
   }
-
+  #h1Size{
+    top: -50px;
   }
+  #pSize{
+    top: -50px;
+  }
+
+  .carousel-caption{
+    top: 0px;
+  }
+
+  };

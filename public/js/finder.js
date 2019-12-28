@@ -6,9 +6,10 @@ $(function () {
         // This file just does a GET request to figure out which user is logged in
         // and updates the HTML on the page
         $.get("/api/user_data").then(function (data) {
-            $(".member-name").text(data.email);
-            $(".member-name").attr('data-id', data.id);
-            myId = data.id;
+            // $(".member-name").text(data.email);
+            // $(".member-name").attr('data-id', data.id);
+            //myId = data.id;
+            myId = $(".member-name").attr('data-id')
             init();
         });
 
@@ -44,8 +45,10 @@ $(function () {
                 console.log(data);
                 data.forEach(item => {
                     const li = $(`<li class="list-group-item">${item.name}: ${item.address} ${item.city} ${item.state}</li>`);
-                    const delBtn = $(`<button class="delBtn" data-id="${item.id}">Delete</button>`);
-                    li.append(delBtn);
+                    // const delBtn = $(`<button class="delBtn" data-id="${item.id}">Delete</button>`);
+                    // li.append(delBtn);
+                    const btn = $(`<button class="openBtn" data-id="${item.id}">End Lease</button>`);
+                    li.append(btn);
                     $("#occupied").append(li);
                 })
             });
@@ -81,21 +84,28 @@ $(function () {
                 state: $("select[name=searchState]").val()
             }
             $.post('/api/units/city', data, (result) => {
-                $("#findUnitsModal .modal-body").empty();
-                const available = result.filter(item => item.status === "available");
-                const ul = $('<ul class="list-group">');
-                available.forEach(item => {
-                    const li = $('<li class="list-group-item">');
-                    const name = $(`<h3>${item.name}</h3>`);
-                    const description = $(`<p>${item.description}<p>`);
-                    const address = $(`<p>${item.address} ${item.city},${item.state} ${item.zip}</p>`);
-                    //if(item.image) const image = $(`<img src="${item.image}">`);
-                    const features = $(`<p>capacity: ${item.capacity}, has tools: ${item.tools}, climate controlled: ${item.climate}</p>`);
-                    const reqBtn = $(` <button class="reqBtn" data-id=${item.id} class="btn btn-primary">Request</button>`)
-                    li.append(name, description, address, features, reqBtn);
-                    ul.append(li);
-                })
-                $("#findUnitsModal .modal-body").append(ul);
+                if (result.length > 0) {
+                    $("#findUnitsModal .modal-body").empty();
+                    const available = result.filter(item => item.status === "available");
+                    const ul = $('<ul class="list-group">');
+                    available.forEach(item => {
+                        const li = $('<li class="list-group-item">');
+                        const name = $(`<h3>${item.name}</h3>`);
+                        const description = $(`<p>${item.description}<p>`);
+                        const address = $(`<p>${item.address} ${item.city},${item.state} ${item.zip}</p>`);
+                        //if(item.image) const image = $(`<img src="${item.image}">`);
+                        const features = $(`<p>capacity: ${item.capacity}, has tools: ${item.tools}, climate controlled: ${item.climate}</p>`);
+                        const reqBtn = $(` <button class="reqBtn" data-id=${item.id} class="btn btn-primary">Request</button>`)
+                        li.append(name, description, address, features, reqBtn);
+                        ul.append(li);
+                    })
+                    $("#findUnitsModal .modal-body").append(ul);
+                } else {
+                    var message = $('<p id="errMess"> Couldnt not find a unit for that location</p>');
+                    $("#errMess").remove();
+                    $("#findUnitsModal .modal-body").append(message);
+
+                }
             })
         });
         // request the unit for rent
@@ -112,6 +122,10 @@ $(function () {
                 type: 'PUT',
                 data: data,
                 success: function (result) {
+                    location.reload();
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert(textStatus);
                     location.reload();
                 }
             });

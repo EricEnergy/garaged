@@ -3,7 +3,7 @@
     <a class="navbar-brand flex-grow-1" href="/index">
       <img src="images\16-512.png" width="40" height="40" alt="">
     </a>
-    <a class="navbar-brand form-inline " href="/members">
+    <a class="navbar-brand form-inline " href="/contact">
       Contact Us
     </a>
     <a class="navbar-brand" href="/logout">
@@ -12,14 +12,17 @@
   </nav>
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <div class="container">
-        <div class="text-center">
-          <h1 class="display-4 lead text-center">Welcome <span data-id="{{id}}" class="member-name"></span></h1>
-          <p class="display-6 lead text-center">Here you can search for active listings.</p>
-        </div>
+      <div class="text-center">
+        {{#with userdata}}
+        <ol>
+          <h1 class="display-4 lead text-center">Welcome <span class="member-name"
+              data-id="{{this.id}}">{{this.email}}</span></h1>
+          <p class="display-6 lead text-center">Here you can check on the status of your current listings and create new
+            listings.</p>
+        </ol>
+        {{/with}}
       </div>
     </div>
-
   </div>
   <div class="jumbotron" id="jumboTwo">
     <h1 class="display-4 lead text-center">Lets Find Available Garages!</h1>
@@ -27,14 +30,21 @@
       Find Garages
     </button>
     <hr class="my-4">
-    <p>Below is a list of garages you own and have listed.</p>
-
-    <h2>Garages You've Requested:</h2>
-    <ul class="list-group" id="requested">
-    </ul>
-    <h2>Garages You Are Renting:</h2>
-    <ul class="list-group" id="occupied">
-    </ul>
+    <p class="text-center">Below is a list of garages you own and have listed.</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h2 class="text-center">Garages You've Requested:</h2>
+          <ul class="list-group" id="requested">
+          </ul>
+        </div>
+        <div class="col-lg-6">
+          <h2 class="text-center">Garages You Are Renting:</h2>
+          <ul class="list-group" id="occupied">
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="modal fade" id="findUnitsModal" tabindex="-1" role="dialog" aria-labelledby="findUnitsModalLabel"
@@ -58,7 +68,7 @@
             </div>
             <label for="state" class="col-sm-2 control-label">State</label>
             <div class="col-sm-10">
-              <select class="form-control" id="state" name="searchState">
+              <select class="form-control mb-3" id="state" name="searchState">
                 <option value="">N/A</option>
                 <option value="AK">Alaska</option>
                 <option value="AL">Alabama</option>
@@ -114,11 +124,13 @@
                 <option value="WY">Wyoming</option>
               </select>
             </div>
-           <button id="findUnits" type="submit" class="btn btn-primary">Search</button>
+            <div class="modal-footer">
+              <button id="findUnits" type="submit" class="btn btn-primary">Search</button>
           </form>
         </div>
       </div>
     </div>
+  </div>
   </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

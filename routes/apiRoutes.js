@@ -57,6 +57,7 @@ module.exports = function(app) {
   });
   // get route for getting units that a user has requested
   app.get("/api/units/:user_id/:status", function(req, res) {
+    console.log(req.params)
     var query = {
       last_request_id : req.params.user_id,
       status: req.params.status
@@ -78,9 +79,16 @@ module.exports = function(app) {
       where: query,
       include: [db.user]
     }).then(function(dbunit) {
-      res.json(dbunit);
+      if (dbunit){
+        res.json(dbunit);
+      } else {
+        var data = {message:"failed to find city"};
+        res.json(data)
+      }
     });
+   
   });
+
   // post route for postting all of the users
   app.post("/api/users", function(req, res) {
     var query = { 
@@ -112,6 +120,8 @@ module.exports = function(app) {
     })
   });
 
+
+  //placeholder
   app.put("/api/unit/request", function(req, res) {
     console.log(req.body)
     var query = { 

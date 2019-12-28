@@ -23,15 +23,25 @@ module.exports = function(app) {
   });
 
   app.get("/index", isAuthenticated, function(req, res) {
-    res.render("index", null);
+
+
+    res.render("index",null);
   });
 
   app.get("/hosting", isAuthenticated, function(req, res) {
-    res.render("hosting", null);
+    data = {
+      email: req.user.email,
+      id: req.user.id
+    };
+    res.render("hosting", {userdata: data});
   });
 
   app.get("/finder", isAuthenticated, function(req, res) {
-    res.render("finder", null);
+    data = {
+      email: req.user.email,
+      id: req.user.id
+    };
+    res.render("finder", {userdata: data});
   });
 
   app.get("/signup", function(req, res) {

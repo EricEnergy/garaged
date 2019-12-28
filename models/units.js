@@ -33,7 +33,7 @@ module.exports = function(sequelize, DataTypes) {
     zip: {
       type: DataTypes.INTEGER,
       validate: {
-        // len: [05]
+        len: [05]
       }
     },
     // owner_id: {
