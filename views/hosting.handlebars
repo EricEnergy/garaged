@@ -1,16 +1,22 @@
-<body>
-  <nav class="navbar navbar-dark bg-primary d-flex justify-content-end">
-    <a class="navbar-brand flex-grow-1" href="/index">
-      <img src="images\16-512.png" width="40" height="40" alt="topIcon" id="iconer">
-    </a>
-    <a class="navbar-brand form-inline " href="/index">
-      Contact Us
-    </a>
-    <a class="navbar-brand" href="/logout">
-      Logout
-    </a>
-  </nav>
-  <div class="jumbotron jumbotron-fluid">
+<body id="loginPage">
+    <div class="topnav" id="topnav">
+    <div class="topnav-centered">
+      <a class="navbar-image" href="/index">
+        <img src="images\16-512.png" width="125" height="125" alt="topIcon" id="iconer">
+      </a>
+    </div>
+    <div class="topnav-left">
+      <a class="navbar-brand text-center" href="/finder">Find </a>
+      <a class="navbar-brand text-center" href="/hosting">Host </a>
+    </div>
+    <div class="topnav-right">
+      <a class="navbar-brand form-inline" href="/contact">Contact Us</a>
+      <a class="navbar-brand" href="/logout">Logout</a>
+    </div>
+
+  </div>
+ 
+  <div class="jumbotron jumbotron-fluid mt-4">
     <div class="container">
         <div class="text-center">
           {{#with userdata}}
@@ -35,8 +41,8 @@ Create a Listing    </button>
   </div>
 
   <div class="modal fade" id="myModal">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content">
+    <div class="modal-dialog modal-dialog-centered modal-lg" >
+      <div class="modal-content" id="findUnitsModalInner">
         <!-- Modal Header -->
         <div class="modal-header text-center">
           <h4 class="modal-title  text-center">Enter garage Info</h4>

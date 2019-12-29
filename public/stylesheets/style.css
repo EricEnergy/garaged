@@ -4,7 +4,33 @@ form.login {
 }
 
 body {
-  background-color: rgb(167, 167, 167);
+  background-color:#D1AB30;
+}
+
+#loginPage1{
+  background-color:#0C053C;
+}
+#loginPage{
+  background-color:#3B4A60;
+}
+
+#findUnitsModalInner{
+  background-color:#9F9E9E;
+  border-style: solid;
+  border-color: ;
+  box-sizing: content-box;  
+
+  border: 20px #3B4A60;
+
+}
+
+.modal-content{
+  font-weight: bold;
+  margin-top: 150px;
+  Display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:#D1AB30;
 }
 
 
@@ -16,7 +42,7 @@ body {
 }
 
 .carousel-caption{
-  color: rgb(245, 245, 122);
+  color: rgb(255, 201, 24);
   font-weight: bold;
   top: 50px;
   left: 0;
@@ -40,9 +66,7 @@ body {
   background-color: #dbdbdb;
 }
 
-#iconer{
-  filter: brightness(0) invert(1);
-}
+
 
 #optionsFH {
   margin:auto; 
@@ -53,13 +77,72 @@ body {
   justify-content: center;
 }
 
+
 .carder {
   float: none; 
   border-radius: 2rem;
   background-color: #dadada;
   justify-content: center;
+  width: 24rem;
 }
 
+.card {
+  background-color: #dadada;
+  justify-content: center;
+  width: 12rem;
+}
+
+#topnav {
+  background-color: #0C053C;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  color: rgb(190, 174, 35);
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Centered section inside the top navigation */
+.topnav-centered a {
+  z-index: 2;
+  top: -10px;
+  position: absolute;
+  left: 50%;
+  margin-left: -100px !important;  /* 50% of your logo width */
+  display: block;
+}
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+  position:relative;
+  left: 53%;
+  margin-left: -100px !important;  /* 50% of your logo width */
+  display: block;
+  font-weight: bold;
+}
+
+.topnav-left {
+  position: relative;
+  right: -33.5%;
+  margin-left: -100px !important;  /* 50% of your logo width */
+  display: block;
+  font-weight: bold;
+}
 
 #jumboTwo{
   margin: 20px;
@@ -73,6 +156,57 @@ body {
 #pSize{
   font-size: 2.5vw;
   text-shadow: 2px 2px rgb(0, 0, 0);
+}
+
+
+
+
+
+@media screen and (max-width: 600px) {
+
+  .modal-content{
+  margin-left: 25px;
+  }
+  .carder {
+    border-radius: 2rem;
+    background-color: #dadada;
+    justify-content: center;
+  }
+
+  .card{
+    width: 8rem;
+    font-size: 10px;
+    margin-top: 10px;
+
+  }
+
+ 
+  .topnav-right {
+    font-size: 8px;
+    position:relative;
+    left: 0%;
+    margin-left: 100px !important;  /* 50% of your logo width */
+    display: contents;
+    float: none;  }
+
+  a.navbar-brand{
+    font-size: 15px;
+  }
+  
+  .topnav-left {
+    position: relative;
+    left: 5%;
+    margin-left: 100px !important;  /* 50% of your logo width */
+    display: contents;
+    float: none; 
+  }
+  .topnav-centered a {
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+    justify-content: center;
+  }
+
 }
 
 @media screen and (max-width: 768px){
@@ -89,5 +223,19 @@ body {
   .carousel-caption{
     top: 0px;
   }
+  
 
   };
+
+  @media screen and (max-width: 1540) {
+    .topnav-left {
+      left: 30%;
+     
+    }
+  }
+  
+  @media screen and (min-width: 1050) {
+    .topnav-left {
+      left: 15%;
+    }
+  }
