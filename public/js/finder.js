@@ -14,39 +14,23 @@ $(function () {
         });
 
         function init() {
-            // $.get(`../api/units/${myId}`, (data) => {
-            //     data.forEach(item => {
-            //         const li = $(`<li class="list-group-item">${item.name} : ${item.status}  </li>`);
-            //         if (item.status === "requested") {
-            //             const btn = $(`<button class="acceptBtn" data-requester="${item.last_request_id}" data-id="${item.id}">Accept Request</button>`);
-            //             li.append(btn);
-            //         }
-            //         if (item.status === "occupied") {
-            //             const btn = $(`<button class="openBtn" data-id="${item.id}">Make Available</button>`);
-            //             li.append(btn);
-            //         }
-            //         const delBtn = $(`<button class="delBtn" data-id="${item.id}">Delete</button>`);
-            //         li.append(delBtn);
-            //         $("#units").append(li);
-            //     })
-            // });
-            
+           
             $.get(`../api/units/${myId}`, (data) => {
                 data.forEach(item => {
                     var image ="images\\user.jpg";
-                    const li = $(`<div class="card" style="width: 18rem;" id="garageIcons">
+                    const li = $(`<div class="card mt-3" style="width: 18rem;" id="garageIcons">
                     <img class="card-img-top" src="${image}" alt="anon user">
                     <div class="card-body">
                       <h5 class="card-title">${item.name} : ${item.status}</h5></div></div>`);
                     if (item.status === "requested") {
-                        const btn = $(`<button class="acceptBtn btn btn-primary" data-requester="${item.last_request_id}" data-id="${item.id}">Accept Request</button>`);
+                        const btn = $(`<button class="acceptBtn btn btn-primary mb-2 mr-1" data-requester="${item.last_request_id}" data-id="${item.id}">Accept Request</button>`);
                         li.append(btn);
                     }
                     if (item.status === "occupied") {
-                        const btn = $(`<button class="openBtn btn btn-success data-id="${item.id}">Make Available</button>`);
+                        const btn = $(`<button class="openBtn btn btn-success mb-2 mr-1" data-id="${item.id}">Make Available</button>`);
                         li.append(btn);
                     }
-                    const delBtn = $(`<button class="delBtn btn btn-warning" data-id="${item.id}">Delete Listing</button>`);
+                    const delBtn = $(`<button class="delBtn btn btn-warning mb-2" data-id="${item.id}">Delete Listing</button>`);
                     li.append(delBtn);
                     $("#units").append(li);
                 })
@@ -58,7 +42,7 @@ $(function () {
                 console.log(data);
                 data.forEach(item => {
                     const li = $(`<li class="list-group-item"><h5>${item.name}: ${item.address} ${item.city} ${item.state} </h5></li>`);
-                    const cancelBtn = $(`<button class="cancelBtn btn btn-danger" data-id="${item.id}">Cancel Request</button>`);
+                    const cancelBtn = $(`<button class="cancelBtn btn btn-danger mb-2" data-id="${item.id}">Cancel Request</button>`);
                     li.append(cancelBtn);
                     $("#requested").append(li);
                 })

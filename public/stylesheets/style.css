@@ -17,7 +17,7 @@ body {
 #findUnitsModalInner{
   background-color:#9F9E9E;
   border-style: solid;
-  border-color: ;
+  border-color: green;
   box-sizing: content-box;  
 
   border: 20px #3B4A60;
@@ -57,8 +57,7 @@ body {
   top: 0;
   left: 0;
   min-width: 100%;
-  /* min-height: 500px; */
-  
+
 }
 #garageIcons{
   display:inline-block;
@@ -144,6 +143,7 @@ body {
   font-weight: bold;
 }
 
+
 #jumboTwo{
   margin: 20px;
 }
@@ -159,7 +159,14 @@ body {
 }
 
 
-
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
 
 
 @media screen and (max-width: 600px) {
