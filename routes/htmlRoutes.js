@@ -41,7 +41,7 @@ module.exports = function (app) {
       email: req.user.email,
       id: req.user.id
     };
-    res.render("finder", { userdata: data });
+    res.render("contact", { userdata: data });
   });
 
   app.get("*", function (req, res) {
