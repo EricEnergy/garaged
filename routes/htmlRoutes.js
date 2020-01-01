@@ -2,13 +2,7 @@ var path = require("path");
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function (app) {
-  app.get("/", function (req, res) {
-    // If the user already has an account send them to the members page
-    if (req.user) {
-      res.redirect("/index");
-    }
-    res.render("login", null);
-  });
+
 
   app.get("/login", function (req, res) {
     // If the user already has an account send them to the members page
@@ -48,5 +42,13 @@ module.exports = function (app) {
       id: req.user.id
     };
     res.render("finder", { userdata: data });
+  });
+
+  app.get("*", function (req, res) {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/index");
+    }
+    res.render("login", null);
   });
 };
