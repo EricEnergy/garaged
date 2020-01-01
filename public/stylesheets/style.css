@@ -47,9 +47,9 @@ body {
   top: 50px;
   left: 0;
   min-width: 100%;
-  min-height: 500px;
-  
+  min-height: 400px;
 }
+
 
 .carousel-inner {
   font-size: 50px;
@@ -85,10 +85,12 @@ body {
   width: 24rem;
 }
 
-.card {
+.card-header {
+  background-color: #0C053C;
+}
+
+.card-body {
   background-color: #dadada;
-  justify-content: center;
-  width: 12rem;
 }
 
 #topnav {
@@ -129,7 +131,7 @@ body {
 /* Right-aligned section inside the top navigation */
 .topnav-right {
   position:relative;
-  left: 53%;
+  left: 56%;
   margin-left: -100px !important;  /* 50% of your logo width */
   display: block;
   font-weight: bold;
@@ -137,7 +139,7 @@ body {
 
 .topnav-left {
   position: relative;
-  right: -33.5%;
+  right: -33%;
   margin-left: -100px !important;  /* 50% of your logo width */
   display: block;
   font-weight: bold;

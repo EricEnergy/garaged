@@ -1,23 +1,16 @@
 $(function () {
-
     var myId;
 
     $(document).ready(function () {
-        // This file just does a GET request to figure out which user is logged in
-        // and updates the HTML on the page
         $.get("/api/user_data").then(function (data) {
-            // $(".member-name").text(data.email);
-            // $(".member-name").attr('data-id', data.id);
-            //myId = data.id;
             myId = $(".member-name").attr('data-id')
             init();
         });
 
         function init() {
-           
             $.get(`../api/units/${myId}`, (data) => {
                 data.forEach(item => {
-                    var image ="images\\user.jpg";
+                    var image = "images\\user.jpg";
                     const li = $(`<div class="card mt-3" style="width: 18rem;" id="garageIcons">
                     <img class="card-img-top" src="${image}" alt="anon user">
                     <div class="card-body">
@@ -36,8 +29,6 @@ $(function () {
                 })
             });
 
-
-            // get all units that the user has requested
             $.get(`../api/units/${myId}/requested`, (data) => {
                 console.log(data);
                 data.forEach(item => {
@@ -59,7 +50,6 @@ $(function () {
                     $("#occupied").append(li);
                 })
             });
-
         }
 
         // list your unit for rent
@@ -96,12 +86,12 @@ $(function () {
                     const available = result.filter(item => item.status === "available");
                     const ul = $('<ul class="list-group">');
                     available.forEach(item => {
-                        const li = $('<li class="list-group-item">');
+                        const li = $('<li class="list-group-item mb-2">');
                         const name = $(`<h3>${item.name}</h3>`);
-                        const description = $(`<p>${item.description}<p>`);
+                        const description = $(`<p>Description: ${item.description}<p>`);
                         const address = $(`<p>${item.address} ${item.city},${item.state} ${item.zip}</p>`);
                         //if(item.image) const image = $(`<img src="${item.image}">`);
-                        const features = $(`<p>capacity: ${item.capacity}, has tools: ${item.tools}, climate controlled: ${item.climate}</p>`);
+                        const features = $(`<p>Capacity: ${item.capacity},<br> Workshop Tools: ${item.tools},<br> Climate Controlled:  ${item.climate}</p>`);
                         const reqBtn = $(` <button class="reqBtn" data-id=${item.id} class="btn btn-primary">Request</button>`)
                         li.append(name, description, address, features, reqBtn);
                         ul.append(li);
@@ -111,7 +101,6 @@ $(function () {
                     var message = $('<p id="errMess"> Couldnt not find a unit for that location</p>');
                     $("#errMess").remove();
                     $("#findUnitsModal .modal-body").append(message);
-
                 }
             })
         });
@@ -137,8 +126,6 @@ $(function () {
                 }
             });
         })
-        // get all of a user's units and display them on their page
-
 
         // accept a unit request
         $(document).on('click', '.acceptBtn', function (e) {

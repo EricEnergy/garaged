@@ -1,8 +1,6 @@
-// Requiring our models
 var db = require("../models");
 var passport = require("../config/passport");
 
-//erics code is below 
 module.exports = function(app) {
  
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
@@ -119,7 +117,6 @@ module.exports = function(app) {
       res.sendStatus(200);
     })
   });
-
 
   //placeholder
   app.put("/api/unit/request", function(req, res) {
