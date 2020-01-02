@@ -10,7 +10,8 @@ $(function () {
         function init() {
             $.get(`../api/units/${myId}`, (data) => {
                 data.forEach(item => {
-                    var image = "images\\user.jpg";
+                    var image = "images/user.jpg"; 
+                    if(item.image) image = item.image;
                     const li = $(`<div class="card mt-3" style="width: 18rem;" id="garageIcons">
                     <img class="card-img-top" src="${image}" alt="anon user">
                     <div class="card-body">
@@ -22,6 +23,10 @@ $(function () {
                     if (item.status === "occupied") {
                         const btn = $(`<button class="openBtn btn btn-success mb-2 mr-1" data-id="${item.id}">Make Available</button>`);
                         li.append(btn);
+                    }
+                    if (!item.image){
+                        const imgBtn = $(`<button class="imgBtn btn-primary btn mb-2 mr-1" data-id="${item.id}">Add Image</button>`);
+                        li.append(imgBtn);
                     }
                     const delBtn = $(`<button class="delBtn btn btn-warning mb-2" data-id="${item.id}">Delete Listing</button>`);
                     li.append(delBtn);
@@ -102,9 +107,28 @@ $(function () {
                 }
             })
         });
+          
+        $(document).on('click', '.imgBtn', function(e){
+            e.preventDefault();
+            const unitId = $(this).data('id');
+            console.log(unitId);
+            // add an image
+            const myWidget = cloudinary.createUploadWidget({
+                cloudName: 'dvqaajrs0', 
+                uploadPreset: 'preset1'
+            }, (error, result) => { 
+                console.log(result)
+                    if (!error) { 
+                        addPhoto(unitId, result.info.secure_url);
+                    }
+                }
+            )
+            myWidget.open();
+        })
+
         // request the unit for rent
         $(document).on('click', '.reqBtn', function (e) {
-            e.preventDefault;
+            e.preventDefault();
             const data = {
                 id: $(this).data('id'),
                 status: "requested",
@@ -191,5 +215,21 @@ $(function () {
                 }
             });
         }
+        
+        //update unit to include photo
+        function addPhoto(unit, photo) {
+            $.ajax({
+                url: '/api/image/upload',
+                type: 'PUT',
+                data: {
+                    id: unit,
+                    imgUrl: photo
+                },
+                success: function (result) {
+                    // location.reload();
+                }
+            });
+        }
+
     });
 });
