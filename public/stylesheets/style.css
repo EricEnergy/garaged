@@ -19,9 +19,7 @@ body {
   border-style: solid;
   border-color: green;
   box-sizing: content-box;  
-
   border: 20px #3B4A60;
-
 }
 
 .modal-content{
@@ -34,10 +32,8 @@ body {
 }
 
 
-.carousel .item {
-  width: 100%;
-  min-height: 500px;
-  background-color: #777;
+.carousel-item > img {
+  max-height: 860px;
   justify-content: center;
 }
 
@@ -167,6 +163,10 @@ body {
     display: block;
     width: 100%;
     text-align: left;
+    
+  }
+  #topnav{
+    padding-left: 0px;
   }
 }
 
@@ -188,7 +188,6 @@ body {
     margin-top: 10px;
 
   }
-
  
   .topnav-right {
     font-size: 8px;
@@ -200,22 +199,54 @@ body {
 
   a.navbar-brand{
     font-size: 15px;
+    margin-left: 5px;
   }
   
   .topnav-left {
     position: relative;
-    left: 5%;
-    margin-left: 100px !important;  /* 50% of your logo width */
     display: contents;
     float: none; 
   }
-  .topnav-centered a {
-    margin-left: auto;
-    margin-right: auto;
-    display: none;
+  .topnav-centered a, .topnav-centered a > img {
+    margin-right: 5px;
+    display: inline-block;
     justify-content: center;
+    position: static;
+    margin-left: 0px !important;
+    margin-top: -5px !important;
+    max-width: 50px;
+    max-height: 50px;
+  }
+}
+
+.welcomeText{
+  font-size: 3.5rem;
+}
+
+.largeText{
+  font-size: 3.5rem;
+}
+
+@media screen and (max-width: 674px) {
+  .welcomeText {
+    font-size: 2rem !important;
+    font-size: 3.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
+  .indexPText{
+    font-size: 0.75rem !important;
+  }
+
+  h3 {
+    font-size: 1rem !important;
+  }
+
+  .largeText{
+    font-size: 2rem !important;
+  }
 }
 
 @media screen and (max-width: 768px){

@@ -14,7 +14,7 @@ $(function () {
                     const li = $(`<div class="card mt-3" style="width: 18rem;" id="garageIcons">
                     <img class="card-img-top" src="${image}" alt="anon user">
                     <div class="card-body">
-                      <h5 class="card-title">${item.name} : ${item.status}</h5></div></div>`);
+                      <h5 class="card-title">${item.name} :<br>${item.status}</h5></div></div>`);
                     if (item.status === "requested") {
                         const btn = $(`<button class="acceptBtn btn btn-primary mb-2 mr-1" data-requester="${item.last_request_id}" data-id="${item.id}">Accept Request</button>`);
                         li.append(btn);
@@ -43,8 +43,6 @@ $(function () {
                 console.log(data);
                 data.forEach(item => {
                     const li = $(`<li class="list-group-item"><h5>${item.name}: ${item.address} ${item.city} ${item.state}</h5> </li>`);
-                    // const delBtn = $(`<button class="delBtn" data-id="${item.id}">Delete</button>`);
-                    // li.append(delBtn);
                     const btn = $(`<button class="openBtn btn btn-warning" data-id="${item.id}">End Lease</button>`);
                     li.append(btn);
                     $("#occupied").append(li);
@@ -91,8 +89,8 @@ $(function () {
                         const description = $(`<p>Description: ${item.description}<p>`);
                         const address = $(`<p>${item.address} ${item.city},${item.state} ${item.zip}</p>`);
                         //if(item.image) const image = $(`<img src="${item.image}">`);
-                        const features = $(`<p>Capacity: ${item.capacity},<br> Workshop Tools: ${item.tools},<br> Climate Controlled:  ${item.climate}</p>`);
-                        const reqBtn = $(` <button class="reqBtn" data-id=${item.id} class="btn btn-primary">Request</button>`)
+                        const features = $(`<p>Capacity: ${item.capacity}<br> Workshop Tools: ${item.tools}<br> Climate Controlled:  ${item.climate}</p>`);
+                        const reqBtn = $(` <button class="reqBtn btn-primary float-right rounded-sm p-1" data-id=${item.id} class="btn">Request</button>`)
                         li.append(name, description, address, features, reqBtn);
                         ul.append(li);
                     })

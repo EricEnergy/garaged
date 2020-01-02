@@ -1,37 +1,38 @@
 <body id="loginPage">
- 
   <div class="topnav" id="topnav">
     <div class="topnav-centered">
-      <a class="navbar-brand flex-grow-1" href="/index">
+      <a class="navbar-image" href="/index">
         <img src="images\16-512.png" width="125" height="125" alt="topIcon" id="iconer">
       </a>
     </div>
     <div class="topnav-left">
-      <a class="navbar-brand" href="/finder">Find </a>
-      <a class="navbar-brand" href="/hosting">Host </a>
+      <a class="navbar-brand text-center" href="/finder">Find </a>
+      <a class="navbar-brand text-center" href="/hosting">Host </a>
     </div>
     <div class="topnav-right">
-      <a class="navbar-brand" id="cont" href="/contact">Contact Us</a>
+      <a class="navbar-brand form-inline" href="/contact">Contact Us</a>
       <a class="navbar-brand" href="/logout">Logout</a>
     </div>
   </div>
-  <div class="jumbotron jumbotron-fluid mt-4">
+  <div class="jumbotron mt-4">
     <div class="container">
       <div class="text-center">
         {{#with userdata}}
-        <ol>
-          <h1 class="display-4 lead text-center">Welcome <span class="member-name"
-              data-id="{{this.id}}">{{this.email}}</span></h1>
+        <section>
+
+          <div class="display-4 lead welcomeText text-center">Welcome <span class="member-name"
+              data-id="{{this.id}}">{{this.email}}</span></div>
           <p class="display-6 lead text-center">Here you can check on the status of your current listings and create new
             listings.</p>
-        </ol>
+        </section>
         {{/with}}
       </div>
     </div>
   </div>
-  <div class="jumbotron" id="jumboTwo">
-    <h1 class="display-4 lead text-center">Let's Find Available Garages!</h1>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#findUnitsModal">
+  </div>
+  <div class="jumbotron text-center" id="jumboTwo">
+    <h1 class="display-4 lead largeText text-center">Let's Find Available Garages!</h1>
+    <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#findUnitsModal">
       Find Garages
     </button>
     <hr class="my-4">

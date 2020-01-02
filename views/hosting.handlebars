@@ -1,5 +1,5 @@
 <body id="loginPage">
-    <div class="topnav" id="topnav">
+  <div class="topnav" id="topnav">
     <div class="topnav-centered">
       <a class="navbar-image" href="/index">
         <img src="images\16-512.png" width="125" height="125" alt="topIcon" id="iconer">
@@ -14,32 +14,35 @@
       <a class="navbar-brand" href="/logout">Logout</a>
     </div>
   </div>
-  <div class="jumbotron jumbotron-fluid mt-4">
+  <div class="jumbotron mt-4">
     <div class="container">
-        <div class="text-center">
-          {{#with userdata}}
-          <ol> 
-          <h1 class="display-4 lead text-center">Welcome <span class="member-name" data-id="{{this.id}}">{{this.email}}</span></h1>
+      <div class="text-center">
+        {{#with userdata}}
+        <section>
+
+          <div class="display-4 lead welcomeText text-center">Welcome <span class="member-name"
+              data-id="{{this.id}}">{{this.email}}</span></div>
           <p class="display-6 lead text-center">Here you can check on the status of your current listings and create new
             listings.</p>
-            </ol>
-          {{/with}}
-        </div>
+        </section>
+        {{/with}}
+      </div>
     </div>
   </div>
-  <div class="jumbotron" id="jumboTwo">
-    <h1 class="display-4 lead text-center">Garages you have listed!</h1>
+  </div>
+  <div class="jumbotron text-center" id="jumboTwo">
+    <h1 class="display-4 largeText lead text-center">Garages you have listed!</h1>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-Create a Listing    </button>
+      Create a Listing </button>
     <hr class="my-4">
     <p class="text-center">Below is a list of garages you own and have listed.</p>
- <div class="list-groupead text-center" id="units">
-</div>
- 
+    <div class="list-groupead text-center" id="units">
+    </div>
+
   </div>
 
   <div class="modal fade" id="myModal">
-    <div class="modal-dialog modal-dialog-centered modal-lg" >
+    <div class="modal-dialog modal-dialog-centered modal-md">
       <div class="modal-content" id="findUnitsModalInner">
         <!-- Modal Header -->
         <div class="modal-header text-center">
@@ -97,11 +100,11 @@ Create a Listing    </button>
 
               <div> <input type="checkbox" name="tools" value="true"> Do you have tool for use?</div>
               <div> <input type="checkbox" name="climate" value="true"> Is your space climate controlled?</div>
-             
+
             </form>
         </div>
         <div class="modal-footer">
-              <button id="submit-unit" type="submit" class="btn btn-primary" data-dismiss="modal">Save</button>
+          <button id="submit-unit" type="submit" class="btn btn-primary" data-dismiss="modal">Save</button>
         </div>
       </div>
     </div>
