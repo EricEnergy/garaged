@@ -167,4 +167,20 @@ module.exports = function(app) {
       res.sendStatus(200);
     });
   }); 
+  
+  //store image url
+  app.put('/api/image/upload', function(req,res){
+    console.log(req.body);
+    var query = {
+      id : req.body.id
+    };
+    db.unit.update({
+      image: req.body.imgUrl
+    },{
+      where: query
+    }).then(function(result) {
+      console.log(result);
+      res.sendStatus(200);
+    });
+  })
 };
