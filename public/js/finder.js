@@ -15,7 +15,7 @@ $(function () {
                     const li = $(`<div class="card mt-3" style="width: 18rem;" id="garageIcons">
                     <img class="card-img-top" src="${image}" alt="anon user">
                     <div class="card-body">
-                      <h5 class="card-title">${item.name} :<br>${item.status}</h5></div></div>`);
+                      <h5 class="card-title">${item.name} :<br>${item.status}</h5><h5>${item.city} ${item.state} </h5></div></div>`);
                     if (item.status === "requested") {
                         const btn = $(`<button class="acceptBtn btn btn-primary mb-2 mr-1" data-requester="${item.last_request_id}" data-id="${item.id}">Accept Request</button>`);
                         li.append(btn);
