@@ -64,7 +64,7 @@ $(function () {
                 description: $("input[name=description]").val(),
                 address: $("input[name=address]").val(),
                 city: $("input[name=city]").val(),
-                state: $("input[name=state]").val(),
+                state: $("select[name=state]").val(),
                 zip: $("input[name=zip]").val(),
                 capacity: $("input[name=capacity]").val(),
                 tools: $("input[name=tools]").val(),
