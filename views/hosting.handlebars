@@ -149,9 +149,16 @@
                 <div class="valid-feedback">Valid.</div>
                 <div class="invalid-feedback">Please fill out this field.</div>
               </div>
-
-              <div> <input type="checkbox" name="tools" value="true"> Do you have tool for use?</div>
-              <div> <input type="checkbox" name="climate" value="true"> Is your space climate controlled?</div>
+              <div class="form-group">
+                <label for="climate">Is your space climate controlled?</label>
+                <input type="radio" name="climate" value="true">Yes</input>
+                <input type="radio" name="climate" value="false">No</input>
+              </div>
+              <div class="form-group">
+                <label for="tools">Do you have tool for use?</label>
+                <input type="radio" name="tools" value="true">Yes</input>
+                <input type="radio" name="tools" value="false">No</input>
+              </div>
 
             </form>
         </div>
