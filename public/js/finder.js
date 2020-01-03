@@ -92,10 +92,15 @@ $(function () {
                         const name = $(`<h3>${item.name}</h3>`);
                         const description = $(`<p>Description: ${item.description}<p>`);
                         const address = $(`<p>${item.address} ${item.city},${item.state} ${item.zip}</p>`);
-                        //if(item.image) const image = $(`<img src="${item.image}">`);
+                        let image;
+                        if(item.image){
+                            image = $(`<img class="listImg"src="${item.image}">`);
+                        } else {
+                            image = $(`<img class="listImg" src="/images/store.png">`)
+                        }
                         const features = $(`<p>Capacity: ${item.capacity}<br> Workshop Tools: ${item.tools}<br> Climate Controlled:  ${item.climate}</p>`);
                         const reqBtn = $(` <button class="reqBtn btn-primary float-right rounded-sm p-1" data-id=${item.id} class="btn">Request</button>`)
-                        li.append(name, description, address, features, reqBtn);
+                        li.append(name, description, image, address, features, reqBtn);
                         ul.append(li);
                     })
                     $("#findUnitsModal .modal-body").append(ul);
