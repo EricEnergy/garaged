@@ -227,6 +227,10 @@ body {
   font-size: 3.5rem;
 }
 
+.card-img-top{
+  min-height: 200px;
+}
+
 @media screen and (max-width: 674px) {
   .welcomeText {
     font-size: 2rem !important;
