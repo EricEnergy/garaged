@@ -37,9 +37,12 @@ $(function () {
             $.get(`../api/units/${myId}/requested`, (data) => {
                 console.log(data);
                 data.forEach(item => {
-                    const li = $(`<li class="list-group-item"><h5>${item.name}: ${item.address} ${item.city} ${item.state} </h5></li>`);
+                    const li = $(`<li class="list-group-item"><h5>${item.name}</h5></li>`);
+                    const addr = $(`<h5>${item.address} ${item.city} ${item.state}</h5>`);
+                    let img = $(`<img class="listImg" src="/images/store.png">`);
+                    if(item.image) $(img).attr('src', item.image);
                     const cancelBtn = $(`<button class="cancelBtn btn btn-danger mb-2" data-id="${item.id}">Cancel Request</button>`);
-                    li.append(cancelBtn);
+                    li.append(img,addr,cancelBtn);
                     $("#requested").append(li);
                 })
             });
@@ -47,9 +50,12 @@ $(function () {
             $.get(`../api/units/${myId}/occupied`, (data) => {
                 console.log(data);
                 data.forEach(item => {
-                    const li = $(`<li class="list-group-item"><h5>${item.name}: ${item.address} ${item.city} ${item.state}</h5> </li>`);
+                    const li = $(`<li class="list-group-item"><h5>${item.name}</h5></li>`);
+                    const addr = $(`<h5>${item.address} ${item.city} ${item.state}</h5>`);
+                    let img = $(`<img class="listImg" src="/images/store.png">`);
+                    if(item.image) $(img).attr('src', item.image);
                     const btn = $(`<button class="openBtn btn btn-warning" data-id="${item.id}">End Lease</button>`);
-                    li.append(btn);
+                    li.append(img,addr,btn);
                     $("#occupied").append(li);
                 })
             });
