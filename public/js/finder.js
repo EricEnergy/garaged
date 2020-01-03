@@ -57,7 +57,6 @@ $(function () {
 
         // list your unit for rent
         $('#submit-unit').on('click', function (e) {
-            console.log(e)
             e.preventDefault();
             const data = {
                 name: $("input[name=name]").val(),
@@ -67,8 +66,8 @@ $(function () {
                 state: $("select[name=state]").val(),
                 zip: $("input[name=zip]").val(),
                 capacity: $("input[name=capacity]").val(),
-                tools: $("input[name=tools]").val(),
-                climate: $("input[name=climate]").val(),
+                tools: $("input[name=tools]").is(":checked"),
+                climate: $("input[name=climate]").is(":checked"),
                 userId: myId
             };
             $.post('/api/unit', data, () => {
