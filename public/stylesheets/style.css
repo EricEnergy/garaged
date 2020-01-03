@@ -231,6 +231,10 @@ body {
   min-height: 200px;
 }
 
+.listImg{
+  width: 150px;
+}
+
 @media screen and (max-width: 674px) {
   .welcomeText {
     font-size: 2rem !important;
