@@ -1,6 +1,6 @@
 {
-    "short_name": "Demo",
-    "name": "Web App Manifest Demo",
+    "short_name": "Garaged App",
+    "name": "Garaged App",
     "icons": [
       {
         "src": "/images/16-512.png",
