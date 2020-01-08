@@ -236,7 +236,7 @@ $(function () {
                     imgUrl: photo
                 },
                 success: function (result) {
-                    // location.reload();
+                     //location.reload();
                 }
             });
         }
