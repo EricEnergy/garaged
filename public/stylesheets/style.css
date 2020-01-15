@@ -200,10 +200,12 @@ body {
   a.navbar-brand{
     font-size: 15px;
     margin-left: 5px;
+    margin-left: -8px;
+
   }
   
   .topnav-left {
-    position: relative;
+    position: sticky;
     display: contents;
     float: none; 
   }
@@ -212,7 +214,7 @@ body {
     display: inline-block;
     justify-content: center;
     position: static;
-    margin-left: 0px !important;
+    margin-left: -5px !important;
     margin-top: -5px !important;
     max-width: 50px;
     max-height: 50px;
