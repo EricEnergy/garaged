@@ -51,8 +51,8 @@ In order to use the app for the first time, you need to sign up and create an ac
 ---
 
 ## Authors
-- Nick Cox
 - Eric Simmons
+- Nick Cox
 - Zac Talley
 - Mario Cortes
 
