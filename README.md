@@ -1,7 +1,7 @@
 # Garaged
 
 ## Introduction
-This application serves as a tool that will connect people who have a storage garage that they would like to rent with people who would like to rent it.
+Garaged is a tool to connect host who have extra space in their garage to rent out to users looking to store their vehicles like motorcycles, cars, recreational vehicles in a space thats away from the elements. Host also have a choice to add an option for users to borrow tools to work on vehicles in the garages. 
 
 Link to app: [Garaged](https://garaged-app.herokuapp.com/)
 
