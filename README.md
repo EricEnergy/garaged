@@ -31,7 +31,14 @@ In order to use the app for the first time, you need to sign up and create an ac
 ![findtoolbar](images/b4.jpg)
 - Here in the finders page you can also see that you can look for availible garages for rent by typing in your city and state. Go ahead and try Chicago IL, or Nashville TN.
 
+- Now that we have explored how to locate garage space that are up for grabs, lets check out how to host your own space. Click on the "Host" tab in the nav bar.
 
+![hostpage](images/b5.jpg)
+-  Here you can see in our snapshot the first listing has been requested, and is now ready for the host to accept. The second listing is currently occupied, and the host has the option to make it available or delete the listing. The third listing is currently up for grabs, and the forth listing is also up for grabs, but the host has not added an image of the garage space for rent which they can now do. 
+
+
+![hostpage](images/b6.jpg)
+-  After Clicking on the "create a listing" button, this is where you will create the listing for your space. The process to create a new listing is strightforward and easy for all users. 
 
 ## Technologies
 - Node
